@@ -1,0 +1,29 @@
+version: "3"
+services:
+  load-balance:
+    restart: "always"
+    build: ./nginx
+    depends_on:
+      - node1
+      - node2
+      - node3
+    ports:
+      - 8888:80
+  node1:
+    restart: "always"
+    build: ./app
+    environment:
+      - PORT=3001
+      - SERVICE_NAME=node1
+  node2:
+    restart: "always"
+    build: ./app
+    environment:
+      - PORT=3002
+      - SERVICE_NAME=node2
+  node3:
+    restart: "always"
+    build: ./app
+    environment:
+      - PORT=3003
+      - SERVICE_NAME=node3
