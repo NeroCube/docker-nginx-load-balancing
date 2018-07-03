@@ -9,10 +9,10 @@ The project structure of the repo.
 | |____Dockerfile
 | |____package.json
 | |____server.js
-|____docker-compose.yml
 |____nginx
 | |____Dockerfile
 | |____nginx.conf
+|____docker-compose.yml
 ```
 
 ## Build
